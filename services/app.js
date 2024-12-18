@@ -1,16 +1,11 @@
 const express = require('express');
-const apiRoutes = require('./routes/apiRoutes'); // Import routes
-
 const app = express();
 const PORT = 3000;
 
-// Middleware
-app.use(express.json());
+app.get('/', (req, res) => {
+    res.send('Hello, PipelineCraft!');
+});
 
-// Routes
-app.use('/api', apiRoutes);
-
-// Start the server
 app.listen(PORT, () => {
-    console.log(Server running on http://localhost:${PORT});
+    console.log(`Server running on http://localhost:${PORT}`);
 });
